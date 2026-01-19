@@ -57,7 +57,7 @@ const statusColors = {
   todo: "bg-gray-100 text-gray-700",
   "in-progress": "bg-blue-100 text-blue-700",
   review: "bg-yellow-100 text-yellow-700",
-  done: "bg-green-100 text-green-700",
+  completed: "bg-green-100 text-green-700",
 }
 
 const priorityColors = {
@@ -73,7 +73,7 @@ export default function TeamMemberPage() {
   const [role, setRole] = React.useState("")
 
   const user = mockUsers.find((u) => u.id === params.id)
-  const userTasks = mockTasks.filter((t) => t.assignee.id === params.id)
+  const userTasks = mockTasks.filter((t) => t.assignee?.id === params.id)
   const userTeams = mockTeams.filter((t) => t.members.some((m) => m.user.id === params.id))
 
   React.useEffect(() => {
@@ -100,10 +100,10 @@ export default function TeamMemberPage() {
 
   const stats = {
     totalTasks: userTasks.length,
-    completedTasks: userTasks.filter((t) => t.status === "done").length,
+    completedTasks: userTasks.filter((t) => t.status === "completed").length,
     inProgressTasks: userTasks.filter((t) => t.status === "in-progress").length,
     overdueTasksCount: userTasks.filter(
-      (t) => t.dueDate && new Date(t.dueDate) < new Date() && t.status !== "done"
+      (t) => t.dueDate && new Date(t.dueDate) < new Date() && t.status !== "completed"
     ).length,
   }
 

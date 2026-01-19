@@ -49,8 +49,8 @@ export default function MessagesPage() {
     channel.name.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
-  const publicChannels = filteredChannels.filter((c) => c.type === "public")
-  const privateChannels = filteredChannels.filter((c) => c.type === "private")
+  const teamChannels = filteredChannels.filter((c) => c.type === "team")
+  const groupChannels = filteredChannels.filter((c) => c.type === "group")
   const directMessages = filteredChannels.filter((c) => c.type === "direct")
 
   const handleCreateChannel = () => {
@@ -176,14 +176,14 @@ export default function MessagesPage() {
         {/* Channel List */}
         <ScrollArea className="flex-1">
           <div className="p-2">
-            {/* Public Channels */}
-            {publicChannels.length > 0 && (
+            {/* Team Channels */}
+            {teamChannels.length > 0 && (
               <div className="mb-4">
                 <div className="flex items-center gap-2 px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   <Hash className="h-3 w-3" />
                   Channels
                 </div>
-                {publicChannels.map((channel) => (
+                {teamChannels.map((channel) => (
                   <Link
                     key={channel.id}
                     href={`/messages/${channel.id}`}
@@ -204,14 +204,14 @@ export default function MessagesPage() {
               </div>
             )}
 
-            {/* Private Channels */}
-            {privateChannels.length > 0 && (
+            {/* Group Channels */}
+            {groupChannels.length > 0 && (
               <div className="mb-4">
                 <div className="flex items-center gap-2 px-2 py-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   <Lock className="h-3 w-3" />
-                  Private Channels
+                  Group Channels
                 </div>
-                {privateChannels.map((channel) => (
+                {groupChannels.map((channel) => (
                   <Link
                     key={channel.id}
                     href={`/messages/${channel.id}`}

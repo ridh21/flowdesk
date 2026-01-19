@@ -22,33 +22,41 @@ import { Progress } from "@/components/ui/progress"
 import { mockUsers, mockTasks } from "@/lib/mock-data"
 import { cn } from "@/lib/utils"
 
-const stats = [
+type StatItem = {
+  title: string
+  value: string
+  change: string
+  changeType: "positive" | "negative" | "neutral"
+  icon: React.ComponentType<{ className?: string }>
+}
+
+const stats: StatItem[] = [
   {
     title: "Total Users",
     value: "156",
     change: "+12",
-    changeType: "positive" as const,
+    changeType: "positive",
     icon: Users,
   },
   {
     title: "Active Users",
     value: "142",
     change: "+5",
-    changeType: "positive" as const,
+    changeType: "positive",
     icon: Activity,
   },
   {
     title: "Tasks Completed",
     value: "1,284",
     change: "+18%",
-    changeType: "positive" as const,
+    changeType: "positive",
     icon: CheckCircle2,
   },
   {
     title: "System Health",
     value: "99.9%",
     change: "-0.1%",
-    changeType: "neutral" as const,
+    changeType: "neutral",
     icon: Shield,
   },
 ]

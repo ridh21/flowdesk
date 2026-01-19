@@ -156,7 +156,7 @@ export default function ChatPage() {
               </div>
             ) : (
               <div className="flex items-center gap-3">
-                {channel.type === "private" ? (
+                {channel.type === "group" ? (
                   <Lock className="h-5 w-5 text-muted-foreground" />
                 ) : (
                   <Hash className="h-5 w-5 text-muted-foreground" />
@@ -213,7 +213,7 @@ export default function ChatPage() {
                     {isDM ? otherUser?.name : `#${channel.name}`}
                   </SheetTitle>
                   <SheetDescription>
-                    {channel.description || "No description"}
+                    {isDM ? "Direct message" : `${channel.type} channel`}
                   </SheetDescription>
                 </SheetHeader>
                 <div className="mt-6 space-y-6">

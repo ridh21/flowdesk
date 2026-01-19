@@ -123,8 +123,8 @@ export default function NotificationsPage() {
     toast.success("All notifications cleared")
   }
 
-  const formatTime = (timestamp: string) => {
-    const date = new Date(timestamp)
+  const formatTime = (timestamp: Date | string) => {
+    const date = typeof timestamp === 'string' ? new Date(timestamp) : timestamp
     const now = new Date()
     const diff = now.getTime() - date.getTime()
     const hours = Math.floor(diff / (1000 * 60 * 60))
@@ -316,7 +316,7 @@ export default function NotificationsPage() {
                                 {notification.message}
                               </p>
                               <p className="text-xs text-muted-foreground mt-1">
-                                {formatTime(notification.timestamp)}
+                                {formatTime(notification.createdAt)}
                               </p>
                             </div>
                             <DropdownMenu>
@@ -332,9 +332,9 @@ export default function NotificationsPage() {
                                     Mark as read
                                   </DropdownMenuItem>
                                 )}
-                                {notification.link && (
+                                {notification.actionUrl && (
                                   <DropdownMenuItem asChild>
-                                    <Link href={notification.link}>View details</Link>
+                                    <Link href={notification.actionUrl}>View details</Link>
                                   </DropdownMenuItem>
                                 )}
                                 <DropdownMenuSeparator />
@@ -405,7 +405,7 @@ export default function NotificationsPage() {
                                   {notification.message}
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-1">
-                                  {formatTime(notification.timestamp)}
+                                  {formatTime(notification.createdAt)}
                                 </p>
                               </div>
                               <DropdownMenu>
@@ -419,9 +419,9 @@ export default function NotificationsPage() {
                                     <Check className="mr-2 h-4 w-4" />
                                     Mark as read
                                   </DropdownMenuItem>
-                                  {notification.link && (
+                                  {notification.actionUrl && (
                                     <DropdownMenuItem asChild>
-                                      <Link href={notification.link}>View details</Link>
+                                      <Link href={notification.actionUrl}>View details</Link>
                                     </DropdownMenuItem>
                                   )}
                                   <DropdownMenuSeparator />
