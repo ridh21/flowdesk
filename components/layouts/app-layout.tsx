@@ -230,7 +230,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
             {/* Quick Create */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button size="sm" className="gap-1">
+                <Button size="sm" className="gap-1 " >
                   <Plus className="h-4 w-4" />
                   Create
                 </Button>

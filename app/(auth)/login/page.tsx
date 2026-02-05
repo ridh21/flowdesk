@@ -143,7 +143,14 @@ export default function LoginPage() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full shadow-[_0px_1px_0px_0px_#FFFFFF40_inset] text-white drop-shadow-md drop-shadow-[0px_4px_3px_rgba(0,0,0,0.10),0px_2px_2px_rgba(0,0,0,0.06)] bg-gradient-to-b from-primary/80 to-primary/100 hover:from-primary/90 hover:to-primary/100 focus:from-primary/90 focus:to-primary/100"
+              // style={{
+              //   boxShadow: "inset 0px 1.5px 0px #ffffff26",
+              // }}
+              disabled={isLoading}
+            >
               {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Sign in
             </Button>
@@ -162,7 +169,7 @@ export default function LoginPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <Button variant="outline" disabled={isLoading}>
+          <Button variant="outline" disabled={isLoading} >
             <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
