@@ -253,7 +253,7 @@ export default function ProfileSettingsPage() {
               </div>
 
               <div className="flex justify-end">
-                <Button type="submit" disabled={isLoading}>
+                <Button type="submit" className="shadow-[_0px_1px_0px_0px_#FFFFFF40_inset] text-white drop-shadow-md drop-shadow-[0px_4px_3px_rgba(0,0,0,0.10),0px_2px_2px_rgba(0,0,0,0.06)] bg-gradient-to-b from-primary/80 to-primary/100 hover:from-primary/90 hover:to-primary/100 focus:from-primary/90 focus:to-primary/100" disabled={isLoading}>
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   Save Changes
                 </Button>

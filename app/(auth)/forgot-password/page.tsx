@@ -85,7 +85,7 @@ export default function ForgotPasswordPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Button asChild variant="outline" className="w-full">
+          <Button asChild variant="outline" className="w-full drop-shadow-[0px_1px_2px_rgba(0,0,0,0.03)] bg-gradient-to-b from-white to-gray-50/50 hover:from-gray-50/50 hover:to-gray-100/50 focus:from-gray-50/50 focus:to-gray-100/50 dark:from-gray-800/50 dark:to-gray-900/50 dark:hover:from-gray-700/50 dark:hover:to-gray-800/50">
             <Link href="/login">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to login
@@ -139,7 +139,7 @@ export default function ForgotPasswordPage() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full shadow-[_0px_1px_0px_0px_#FFFFFF40_inset] text-white drop-shadow-md drop-shadow-[0px_4px_3px_rgba(0,0,0,0.10),0px_2px_2px_rgba(0,0,0,0.06)] bg-gradient-to-b from-primary/80 to-primary/100 hover:from-primary/90 hover:to-primary/100 focus:from-primary/90 focus:to-primary/100" disabled={isLoading}>
               {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Send reset link
             </Button>
@@ -147,7 +147,7 @@ export default function ForgotPasswordPage() {
         </Form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
-        <Button asChild variant="ghost" className="w-full">
+        <Button asChild variant="outline" className="w-full drop-shadow-[0px_1px_2px_rgba(0,0,0,0.03)] bg-gradient-to-b from-white to-gray-50/50 hover:from-gray-50/50 hover:to-gray-100/50 focus:from-gray-50/50 focus:to-gray-100/50 dark:from-gray-800/50 dark:to-gray-900/50 dark:hover:from-gray-700/50 dark:hover:to-gray-800/50">
           <Link href="/login">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to login

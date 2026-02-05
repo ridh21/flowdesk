@@ -385,11 +385,11 @@ export default function EditTaskPage() {
                   />
 
                   <div className="flex gap-4">
-                    <Button type="submit" disabled={isLoading}>
+                    <Button type="submit" className="shadow-[_0px_1px_0px_0px_#FFFFFF40_inset] text-white drop-shadow-md drop-shadow-[0px_4px_3px_rgba(0,0,0,0.10),0px_2px_2px_rgba(0,0,0,0.06)] bg-gradient-to-b from-primary/80 to-primary/100 hover:from-primary/90 hover:to-primary/100 focus:from-primary/90 focus:to-primary/100" disabled={isLoading}>
                       {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                       Save Changes
                     </Button>
-                    <Button type="button" variant="outline" onClick={() => router.back()} disabled={isLoading}>
+                    <Button type="button" variant="outline" className="drop-shadow-[0px_1px_2px_rgba(0,0,0,0.03)] bg-gradient-to-b from-white to-gray-50/50 hover:from-gray-50/50 hover:to-gray-100/50 focus:from-gray-50/50 focus:to-gray-100/50 dark:from-gray-800/50 dark:to-gray-900/50 dark:hover:from-gray-700/50 dark:hover:to-gray-800/50" onClick={() => router.back()} disabled={isLoading}>
                       Cancel
                     </Button>
                   </div>
