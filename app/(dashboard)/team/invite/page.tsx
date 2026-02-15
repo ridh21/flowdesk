@@ -7,7 +7,7 @@ import { ArrowLeft, Mail, UserPlus, Trash2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -100,9 +100,7 @@ export default function InviteMemberPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    toast.success(`Invitation${allInvites.length > 1 ? "s" : ""} sent successfully!`, {
-      description: `${allInvites.length} invitation${allInvites.length > 1 ? "s" : ""} sent`,
-    })
+    sileo.success({ title: `Invitation${allInvites.length > 1 ? "s" : ""} sent successfully!`, description: `${allInvites.length} invitation${allInvites.length > 1 ? "s" : ""} sent` })
     setIsLoading(false)
     router.push("/team")
   }

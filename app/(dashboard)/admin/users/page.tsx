@@ -13,7 +13,7 @@ import {
   XCircle,
   Filter,
 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -99,20 +99,20 @@ export default function AdminUsersPage() {
   }
 
   const handleInviteUser = () => {
-    toast.success("Invitation sent!")
+    sileo.success({ title: "Invitation sent!" })
     setInviteDialogOpen(false)
   }
 
   const handleSuspendUser = (id: string) => {
-    toast.success("User suspended")
+    sileo.success({ title: "User suspended" })
   }
 
   const handleActivateUser = (id: string) => {
-    toast.success("User activated")
+    sileo.success({ title: "User activated" })
   }
 
   const handleDeleteUser = (id: string) => {
-    toast.success("User deleted")
+    sileo.success({ title: "User deleted" })
   }
 
   return (

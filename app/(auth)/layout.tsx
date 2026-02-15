@@ -1,4 +1,4 @@
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/toaster"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function AuthLayout({
@@ -14,7 +14,7 @@ export default function AuthLayout({
       <div className="w-full max-w-md">
         {children}
       </div>
-      <Toaster position="top-center" />
+      <Toaster position="top-center" options={{ duration: 4000 }} />
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { GitBranch, Loader2, ArrowLeft } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -50,9 +50,7 @@ export default function ForgotPasswordPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    toast.success("Reset link sent!", {
-      description: "Check your email for the password reset link.",
-    })
+    sileo.success({ title: "Reset link sent!", description: "Check your email for the password reset link." })
     
     setIsLoading(false)
     setIsSubmitted(true)

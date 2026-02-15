@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Plus, MoreHorizontal, Shield, Users, Check, Pencil, Trash2 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -121,7 +121,7 @@ export default function AdminRolesPage() {
     setNewRoleName("")
     setNewRoleDescription("")
     setSelectedPermissions([])
-    toast.success("Role created successfully")
+    sileo.success({ title: "Role created successfully" })
   }
 
   const handleEditRole = () => {
@@ -137,7 +137,7 @@ export default function AdminRolesPage() {
     setNewRoleName("")
     setNewRoleDescription("")
     setSelectedPermissions([])
-    toast.success("Role updated successfully")
+    sileo.success({ title: "Role updated successfully" })
   }
 
   const handleDeleteRole = () => {
@@ -145,7 +145,7 @@ export default function AdminRolesPage() {
     setRoles(roles.filter((r) => r.id !== roleToDelete))
     setDeleteDialogOpen(false)
     setRoleToDelete(null)
-    toast.success("Role deleted successfully")
+    sileo.success({ title: "Role deleted successfully" })
   }
 
   const openEditDialog = (role: typeof defaultRoles[0]) => {

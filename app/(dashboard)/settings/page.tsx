@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Camera, Loader2 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -75,7 +75,7 @@ export default function ProfileSettingsPage() {
     setIsLoading(true)
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
-    toast.success("Profile updated successfully")
+    sileo.success({ title: "Profile updated successfully" })
   }
 
   return (

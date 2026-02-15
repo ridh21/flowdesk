@@ -7,7 +7,7 @@ import { ArrowLeft, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -95,9 +95,7 @@ export default function CreateTaskPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    toast.success("Task created successfully!", {
-      description: `"${data.title}" has been added to your tasks.`,
-    })
+    sileo.success({ title: "Task created successfully!", description: `"${data.title}" has been added to your tasks.` })
     
     setIsLoading(false)
     router.push("/tasks")

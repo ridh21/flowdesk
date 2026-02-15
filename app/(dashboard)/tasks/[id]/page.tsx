@@ -13,7 +13,7 @@ import {
   Trash2,
   User,
 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -68,9 +68,9 @@ export default function TaskDetailsPage() {
   const router = useRouter()
   const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false)
   const [comment, setComment] = React.useState("")
-  
+
   const task = mockTasks.find((t) => t.id === params.id)
-  
+
   if (!task) {
     return (
       <div className="flex flex-col items-center justify-center h-[50vh] gap-4">
@@ -83,17 +83,17 @@ export default function TaskDetailsPage() {
   }
 
   const handleDelete = () => {
-    toast.success("Task deleted successfully")
+    sileo.success({ title: "Task deleted successfully" })
     router.push("/tasks")
   }
 
   const handleStatusChange = (status: string) => {
-    toast.success(`Task status updated to ${status.replace("-", " ")}`)
+    sileo.success({ title: `Task status updated to ${status.replace("-", " ")}` })
   }
 
   const handleAddComment = () => {
     if (comment.trim()) {
-      toast.success("Comment added")
+      sileo.success({ title: "Comment added" })
       setComment("")
     }
   }
@@ -274,9 +274,9 @@ export default function TaskDetailsPage() {
                   <span className="text-sm text-muted-foreground">Unassigned</span>
                 )}
               </div>
-              
+
               <Separator />
-              
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Tag className="h-4 w-4" />
@@ -286,9 +286,9 @@ export default function TaskDetailsPage() {
                   {task.priority}
                 </Badge>
               </div>
-              
+
               <Separator />
-              
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
@@ -300,9 +300,9 @@ export default function TaskDetailsPage() {
                     : "No due date"}
                 </span>
               </div>
-              
+
               <Separator />
-              
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="h-4 w-4" />

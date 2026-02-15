@@ -7,7 +7,7 @@ import { ArrowLeft, Loader2, Plus, GripVertical, X, Palette } from "lucide-react
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -86,7 +86,7 @@ export default function CreateWorkflowPage() {
       const newStages = stages.filter((_, i) => i !== index)
       form.setValue("stages", newStages)
     } else {
-      toast.error("Minimum 2 stages required")
+      sileo.error({ title: "Minimum 2 stages required" })
     }
   }
 
@@ -102,9 +102,7 @@ export default function CreateWorkflowPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    toast.success("Workflow created successfully!", {
-      description: `"${data.name}" is ready to use.`,
-    })
+    sileo.success({ title: "Workflow created successfully!", description: `"${data.name}" is ready to use.` })
     
     setIsLoading(false)
     router.push("/workflows")

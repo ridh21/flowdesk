@@ -7,7 +7,7 @@ import { GitBranch, Loader2, Eye, EyeOff, Check } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -67,9 +67,7 @@ export default function ResetPasswordPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    toast.success("Password reset successful!", {
-      description: "You can now log in with your new password.",
-    })
+    sileo.success({ title: "Password reset successful!", description: "You can now log in with your new password." })
     
     setIsLoading(false)
     router.push("/login")

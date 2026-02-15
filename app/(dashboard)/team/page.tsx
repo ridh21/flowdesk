@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Plus, Search, MoreHorizontal, Users, UserPlus, Mail, Shield } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -71,7 +71,7 @@ export default function TeamPage() {
   })
 
   const handleRemoveMember = () => {
-    toast.success("Member removed successfully")
+    sileo.success({ title: "Member removed successfully" })
     setMemberToRemove(null)
     setRemoveDialogOpen(false)
   }

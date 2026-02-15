@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Check, CreditCard, Download, AlertCircle } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -87,12 +87,12 @@ export default function BillingSettingsPage() {
   const [cancelDialogOpen, setCancelDialogOpen] = React.useState(false)
 
   const handleUpgrade = (plan: string) => {
-    toast.success(`Upgraded to ${plan} plan`)
+    sileo.success({ title: `Upgraded to ${plan} plan` })
     setUpgradeDialogOpen(false)
   }
 
   const handleCancelSubscription = () => {
-    toast.info("Subscription cancelled. You'll have access until the end of your billing period.")
+    sileo.info({ title: "Subscription cancelled. You'll have access until the end of your billing period." })
     setCancelDialogOpen(false)
   }
 

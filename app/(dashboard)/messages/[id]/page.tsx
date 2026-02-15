@@ -25,7 +25,7 @@ import {
   Bell,
   BellOff,
 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"

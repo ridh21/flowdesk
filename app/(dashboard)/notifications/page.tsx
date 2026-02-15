@@ -19,7 +19,7 @@ import {
   AtSign,
   GitMerge,
 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -103,24 +103,24 @@ export default function NotificationsPage() {
       prev.map((n) => (ids.includes(n.id) ? { ...n, read: true } : n))
     )
     setSelectedIds([])
-    toast.success(`${ids.length} notification${ids.length > 1 ? "s" : ""} marked as read`)
+    sileo.success({ title: `${ids.length} notification${ids.length > 1 ? "s" : ""} marked as read` })
   }
 
   const markAllAsRead = () => {
     setNotifications((prev) => prev.map((n) => ({ ...n, read: true })))
-    toast.success("All notifications marked as read")
+    sileo.success({ title: "All notifications marked as read" })
   }
 
   const deleteNotifications = (ids: string[]) => {
     setNotifications((prev) => prev.filter((n) => !ids.includes(n.id)))
     setSelectedIds([])
-    toast.success(`${ids.length} notification${ids.length > 1 ? "s" : ""} deleted`)
+    sileo.success({ title: `${ids.length} notification${ids.length > 1 ? "s" : ""} deleted` })
   }
 
   const clearAllNotifications = () => {
     setNotifications([])
     setClearDialogOpen(false)
-    toast.success("All notifications cleared")
+    sileo.success({ title: "All notifications cleared" })
   }
 
   const formatTime = (timestamp: Date | string) => {

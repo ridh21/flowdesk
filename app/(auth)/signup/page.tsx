@@ -7,7 +7,7 @@ import { GitBranch, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -66,9 +66,7 @@ export default function SignupPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    toast.success("Account created!", {
-      description: "Please check your email to verify your account.",
-    })
+    sileo.success({ title: "Account created!", description: "Please check your email to verify your account." })
     
     setIsLoading(false)
     router.push("/login")

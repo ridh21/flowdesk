@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Loader2 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -45,7 +45,7 @@ export default function NotificationSettingsPage() {
     setIsLoading(true)
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
-    toast.success("Notification settings saved")
+    sileo.success({ title: "Notification settings saved" })
   }
 
   return (

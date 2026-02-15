@@ -7,7 +7,7 @@ import { ArrowLeft, Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -110,9 +110,7 @@ export default function EditTaskPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    toast.success("Task updated successfully!", {
-      description: `"${data.title}" has been updated.`,
-    })
+    sileo.success({ title: "Task updated successfully!", description: `"${data.title}" has been updated.` })
     
     setIsLoading(false)
     router.push(`/tasks/${params.id}`)

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Loader2, AlertTriangle } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -66,18 +66,18 @@ export default function AccountSettingsPage() {
     setIsLoading(true)
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
-    toast.success("Account settings updated")
+    sileo.success({ title: "Account settings updated" })
   }
 
   const handleExportData = async () => {
-    toast.info("Preparing your data export...")
+    sileo.info({ title: "Preparing your data export..." })
     await new Promise((resolve) => setTimeout(resolve, 2000))
-    toast.success("Data export ready! Check your email for the download link.")
+    sileo.success({ title: "Data export ready! Check your email for the download link." })
     setExportDialogOpen(false)
   }
 
   const handleDeleteAccount = async () => {
-    toast.error("Account deletion is not available in demo mode")
+    sileo.error({ title: "Account deletion is not available in demo mode" })
     setDeleteDialogOpen(false)
   }
 

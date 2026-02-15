@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Loader2, Save } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -46,7 +46,7 @@ export default function AdminSettingsPage() {
     setIsLoading(true)
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
-    toast.success("Settings saved successfully")
+    sileo.success({ title: "Settings saved successfully" })
   }
 
   return (

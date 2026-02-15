@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Search, Plus, Hash, Users, Lock, MoreHorizontal, Settings } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -54,7 +54,7 @@ export default function MessagesPage() {
   const directMessages = filteredChannels.filter((c) => c.type === "direct")
 
   const handleCreateChannel = () => {
-    toast.success(channelType === "channel" ? "Channel created!" : "Direct message started!")
+    sileo.success({ title: channelType === "channel" ? "Channel created!" : "Direct message started!" })
     setCreateDialogOpen(false)
   }
 

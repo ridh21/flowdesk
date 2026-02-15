@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Eye, EyeOff, Loader2, Smartphone, Shield, Key, CheckCircle2 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -104,26 +104,26 @@ export default function SecuritySettingsPage() {
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
     form.reset()
-    toast.success("Password changed successfully")
+    sileo.success({ title: "Password changed successfully" })
   }
 
   const handleEnable2FA = () => {
     setTwoFactorEnabled(true)
     setSetupDialogOpen(false)
-    toast.success("Two-factor authentication enabled")
+    sileo.success({ title: "Two-factor authentication enabled" })
   }
 
   const handleDisable2FA = () => {
     setTwoFactorEnabled(false)
-    toast.info("Two-factor authentication disabled")
+    sileo.info({ title: "Two-factor authentication disabled" })
   }
 
   const handleRevokeSession = (id: string) => {
-    toast.success("Session revoked successfully")
+    sileo.success({ title: "Session revoked successfully" })
   }
 
   const handleRevokeAllSessions = () => {
-    toast.success("All other sessions revoked")
+    sileo.success({ title: "All other sessions revoked" })
   }
 
   return (

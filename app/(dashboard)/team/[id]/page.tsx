@@ -15,7 +15,7 @@ import {
   AlertCircle,
   Edit,
 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -95,7 +95,7 @@ export default function TeamMemberPage() {
 
   const handleRoleChange = (newRole: string) => {
     setRole(newRole)
-    toast.success(`Role updated to ${newRole}`)
+    sileo.success({ title: `Role updated to ${newRole}` })
   }
 
   const stats = {

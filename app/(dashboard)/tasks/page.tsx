@@ -14,7 +14,7 @@ import {
   LayoutGrid,
   List,
 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -124,7 +124,7 @@ export default function TasksPage() {
   const handleDeleteTask = () => {
     if (taskToDelete) {
       setTasks(tasks.filter((t) => t.id !== taskToDelete))
-      toast.success("Task deleted successfully")
+      sileo.success({ title: "Task deleted successfully" })
       setTaskToDelete(null)
     }
     setDeleteDialogOpen(false)
@@ -132,7 +132,7 @@ export default function TasksPage() {
 
   const handleBulkDelete = () => {
     setTasks(tasks.filter((t) => !selectedTasks.includes(t.id)))
-    toast.success(`${selectedTasks.length} tasks deleted`)
+    sileo.success({ title: `${selectedTasks.length} tasks deleted` })
     setSelectedTasks([])
   }
 

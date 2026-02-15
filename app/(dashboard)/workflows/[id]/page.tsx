@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { useParams, useRouter } from "next/navigation"
 import { ArrowLeft, Edit, MoreHorizontal, Plus, Trash2 } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -59,7 +59,7 @@ export default function WorkflowDetailsPage() {
   }
 
   const handleDelete = () => {
-    toast.success("Workflow deleted successfully")
+    sileo.success({ title: "Workflow deleted successfully" })
     router.push("/workflows")
   }
 

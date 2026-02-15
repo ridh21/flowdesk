@@ -3,7 +3,7 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 import { Check, Monitor, Moon, Sun, Palette } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -70,17 +70,17 @@ export default function AppearanceSettingsPage() {
 
   const handleAccentChange = (color: string) => {
     setAccentColor(color)
-    toast.success("Accent color updated")
+    sileo.success({ title: "Accent color updated" })
   }
 
   const handleFontSizeChange = (size: string) => {
     setFontSize(size)
-    toast.success("Font size updated")
+    sileo.success({ title: "Font size updated" })
   }
 
   const handleDensityChange = (d: string) => {
     setDensity(d)
-    toast.success("Display density updated")
+    sileo.success({ title: "Display density updated" })
   }
 
   return (

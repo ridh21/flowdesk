@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Plus, Search, MoreHorizontal, GitBranch, Users, Calendar } from "lucide-react"
-import { toast } from "sonner"
+import { sileo } from "sileo"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -41,7 +41,7 @@ export default function WorkflowsPage() {
   )
 
   const handleDelete = () => {
-    toast.success("Workflow deleted successfully")
+    sileo.success({ title: "Workflow deleted successfully" })
     setWorkflowToDelete(null)
     setDeleteDialogOpen(false)
   }
